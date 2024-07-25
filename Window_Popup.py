@@ -20,7 +20,7 @@ class UserList:
         self.main = Tk()
         self.main.title('사용자 명단')
         self.main.geometry('540x400')
-        self.main.configure(bg='grey')
+        self.main.configure(bg='lightgrey')
         
         self.create_widgets()
 
@@ -86,23 +86,23 @@ class AddBook:
 
         self.main = Tk()
         self.main.title('도서 추가')
-        self.main.geometry('540x400')
-        self.main.configure(bg='grey')
+        self.main.geometry()
+        self.main.configure(bg='lightgrey')
 
         self.create_widgets()
 
         self.main.mainloop()
 
     def create_widgets(self):
-        label1 = Label(self.main, text='제목')
+        label1 = Label(self.main, text='제목', bg='lightgrey')
         label1.grid(row=0, column=0)
-        label2 = Label(self.main, text='ISBN')
+        label2 = Label(self.main, text='ISBN', bg='lightgrey')
         label2.grid(row=1, column=0)
-        label3 = Label(self.main, text='저자')
+        label3 = Label(self.main, text='저자', bg='lightgrey')
         label3.grid(row=2, column=0)
-        label4 = Label(self.main, text='출판사')
+        label4 = Label(self.main, text='출판사', bg='lightgrey')
         label4.grid(row=3, column=0)
-        label5 = Label(self.main, text='추가할 권 수')
+        label5 = Label(self.main, text='추가할 권 수', bg='lightgrey')
         label5.grid(row=4, column=0)
 
         entry1 = Entry(self.main)

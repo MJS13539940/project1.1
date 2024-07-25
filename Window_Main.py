@@ -3,6 +3,9 @@ from tkinter import *
 from Window_Contents import Window_User
 from Window_Contents import Window_Borrow
 from Window_Contents import Window_Book
+from Window_Contents import Window_Category
+from Window_Contents import Window_Publisher
+
 
 #이쯤에서 데이터 불러오기?
 
@@ -16,7 +19,7 @@ class Window_Main():
         self.main = Tk()
         self.main.title('도서관 출납 관리자')
         self.main.geometry('560x560') #540x540
-        self.main.configure(bg='grey')
+        self.main.configure(bg='lightgrey')
 
         #컨텐츠 프레임 생성
         self.frame_user = Frame(self.main)
@@ -27,7 +30,7 @@ class Window_Main():
 
 
         #버튼 프레임 생성
-        self.frame_icons = Frame(self.main, bg='purple')        
+        self.frame_icons = Frame(self.main, bg='lightgrey')        
         self.frame_icons.pack(side='left')
         #카운트 변수로 위젯생성제어
         self.btns_count = {'a': None, 'b': None, 'c': None, 'd': None, 'e': None}
@@ -106,7 +109,9 @@ class Window_Main():
         self.frame_publisher.pack_forget()
         self.frame_category.pack(fill='both', expand=True)
 
-        #self.page_category()
+        if self.btns_count['d'] == None:#카운트 및 위젯 생성
+            Window_Category(self.frame_category)
+            self.btns_count['d'] = True
 
     def show_page_publisher(self):
         self.frame_user.pack_forget()
@@ -115,7 +120,9 @@ class Window_Main():
         self.frame_category.pack_forget()
         self.frame_publisher.pack(fill='both', expand=True)
 
-        #self.page_publisher()
+        if self.btns_count['e'] == None:#카운트 및 위젯 생성
+            Window_Publisher(self.frame_publisher)
+            self.btns_count['e'] = True
 
     
 
